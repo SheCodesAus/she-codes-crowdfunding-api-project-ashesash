@@ -54,9 +54,9 @@
  </br>
  </br>
  
- <ins>Colour palettes</ins>
+ <ins>Colour palette</ins>
  </br>
- <img src="palette2.svg" alt="Pawful wireframe" width="700" height="auto"> 
+ <img src="pawfulcolours.png" alt="Pawful Colour Scheme" width="700" height="auto"> 
  
 <ins>API Specifications</ins>
 
