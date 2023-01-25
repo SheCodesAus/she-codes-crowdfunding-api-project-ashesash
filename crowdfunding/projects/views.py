@@ -84,3 +84,29 @@ class PledgeList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(supporter=self.request.user)
+
+class PledgeDetail(APIView):
+    # permission_classes = [
+    #     permissions.IsAuthenticatedOrReadOnly,
+    #     IsOwnerOrReadOnly
+    # ]
+
+    def get_object(self, pk):
+        try:
+            pledge = Pledge.objects.get(pk=pk)
+            self.check_object_permissions(self.request, pledge)
+            return pledge
+        except Pledge.DoesNotExist:
+            raise Http404
+
+    def put(self, request, pk):
+        pledge = self.get_object(pk)
+        data = request.data
+        serializer = PledgeSerializer(
+            instance=pledge,
+            data=data,
+            partial=True
+        )
+        if serializer.is_valid():
+            serializer.save()
+        return Response(serializer.data)

@@ -5,3 +5,4 @@ urlpatterns = [
     path('', views.CustomUserList.as_view(), name='customeruser-list'),
     path('<int:pk>/', views.CustomUserDetail.as_view(), name='customuser-detail'),
 ]
+# PUT HOST/change-pass
