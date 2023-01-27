@@ -86,10 +86,10 @@ class PledgeList(generics.ListCreateAPIView):
         serializer.save(supporter=self.request.user)
 
 class PledgeDetail(APIView):
-    # permission_classes = [
-    #     permissions.IsAuthenticatedOrReadOnly,
-    #     IsOwnerOrReadOnly
-    # ]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        IsOwnerOrReadOnly
+    ]
 
     def get_object(self, pk):
         try:
