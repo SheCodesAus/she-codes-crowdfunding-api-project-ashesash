@@ -60,6 +60,13 @@ class ProjectDetail(APIView):
             serializer.save()
         return Response(serializer.data)
 
+    def delete(self, request, pk):
+        project = self.get_object(pk)
+        if project.owner == request.user:
+            project.delete()
+            return Response("User Deleted")
+        return Response ("project not authorised to be deleted")
+
 
 class PledgeList(generics.ListCreateAPIView):
     # def get(self, request):
@@ -110,3 +117,10 @@ class PledgeDetail(APIView):
         if serializer.is_valid():
             serializer.save()
         return Response(serializer.data)
+
+    def delete(self, request, pk):
+        pledge = self.get_object(pk)
+        if pledge.supporter == request.user:
+            pledge.delete()
+            return Response("User Deleted")
+        return Response ("project not authorised to be deleted")

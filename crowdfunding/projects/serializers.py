@@ -33,6 +33,7 @@ class ProjectSerializer(serializers.Serializer):
     goal = serializers.IntegerField()
     image = serializers.URLField()
     is_open = serializers.BooleanField()
+    is_active = serializers.BooleanField()
     date_created = serializers.DateTimeField(read_only=True)
     owner = serializers.ReadOnlyField(source='owner.id')
     # pledges = PledgeSerializer(many=True, read_only=True)
