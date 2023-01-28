@@ -5,10 +5,11 @@
 ### Pawful will be a crowdfunding website for people who are differently able, old or from low income households. It's also open to animal shelters struggling to keep their centres alive and retirement homes looking to adopt lots of pets. A crowdfunding project can be starting pending that the pets can be homed comfortably. 
 ### In second phase we will partner with animal shelters to make it easier for organizations/people looking shorter term options (fostering or for small petting events) and offer easier crowdfunding for such events.
 
-## Built With:
+## Built With and technologies used:
 
 - [Django Framework](https://docs.djangoproject.com/en/)
 - [Fly.io](https://fly.io/docs/)
+- [Insomnia] (https://docs.insomnia.rest/)
 
 ## Installation and Run project:
 
