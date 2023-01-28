@@ -11,6 +11,7 @@ class Project(models.Model):
     is_open=models.BooleanField()
     is_active=models.BooleanField(default=True)
     date_created=models.DateTimeField(auto_now_add=True)
+    date_end=models.DateTimeField()
     owner=models.ForeignKey(
         User,
         on_delete=models.CASCADE,
