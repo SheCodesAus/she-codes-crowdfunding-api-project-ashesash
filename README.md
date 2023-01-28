@@ -7,10 +7,8 @@
 
 ## Built With:
 
-- [Django Framwork](https://docs.djangoproject.com/en/)
-- [MySqlClient Database](https://pypi.org/project/mysqlclient/)
-- [Soft UI Design System](https://github.com/app-generator/django-soft-ui-design)
-- [HTML, CSS, JS, Bootstrap....](https://www.w3.org/)
+- [Django Framework](https://docs.djangoproject.com/en/)
+- [Fly.io](https://fly.io/docs/)
 
 ## Installation and Run project:
 
@@ -60,33 +58,12 @@
   source .venv/bin/activate
   ```
 
-- [Install requirments]
+- [Install requirements]
   ```bash
   pip3 install -r requirements.txt
   ```
-- [Install mysqlClient]
-  ```bash
-  pip3 install mysqlclient
-  ```
 
-6- Set These Values in "setting.by" file to test Verification using email
-
-EMAIL_USE_TLS = True  
-EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_USER = 'MANKRA42TEAM@gmail.com'  
-EMAIL_HOST_PASSWORD = 'Mankra12345*'
-EMAIL_PORT = 587
-
-\*\* or you can add your [gmail] but insure that the account security not activated :D
-
-7- put the 'index.py' file to this path '.venv/Lib/site-packages/django/templatetags/'
-
-8- go to this path '.venv/Lib/site-packages/django/conf/global_settings.py'
-
-- search for [PASSWORD_HASHERS] list
-- add this 'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher' in the first of this list
-
-9- Run the following to load Data base
+6- Run the following to load Data base
 
 ```bash
 python3 manage.py makemigrations
@@ -96,7 +73,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-10- create your superuser [admin] to access [Admin Dashboard]
+7- create your superuser [admin] to access [Admin Dashboard]
 
 ```bash
 python3 manage.py createsuperuser
@@ -105,7 +82,7 @@ python3 manage.py createsuperuser
     > enter password
 ```
 
-11- After All is Finished run server
+8- After All is Finished run server
 
 ```bash
 	python3 manage.py runserver
