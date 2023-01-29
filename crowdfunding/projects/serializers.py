@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Project, Pledge
+from users.serializers import CustomUserSerializer
 
 class PledgeSerializer(serializers.ModelSerializer):
     # id = serializers.ReadOnlyField()
@@ -31,6 +32,9 @@ class ProjectSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=200)
     description = serializers.CharField(max_length=None)
     goal = serializers.IntegerField()
+    cause = serializers.ChoiceField(choices= Project.Project_type)
+    total_likes = serializers.IntegerField(read_only=True)
+    total_pledges = serializers.IntegerField(read_only=True)
     image = serializers.URLField()
     is_open = serializers.BooleanField()
     is_active = serializers.BooleanField()
@@ -44,6 +48,7 @@ class ProjectSerializer(serializers.Serializer):
 
 class ProjectDetailSerializer(ProjectSerializer):
     pledges = PledgeSerializer(many=True, read_only=True)
+    liked_by = CustomUserSerializer(many=True, read_only=True)
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title', instance.title)
