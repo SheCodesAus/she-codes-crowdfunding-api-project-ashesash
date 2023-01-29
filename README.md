@@ -208,3 +208,4 @@ curl --request POST \
 | /pledges/    | Get pledge | GET         | Must be logged in |
 | /pledges/int      | Update existing instance|PUT | Must be logged in |
 | /pledges/int      |Delete pledge| Delete      | Must be logged in |
+| /pledges/int/like      |Add like| POST      | Must be logged in |
