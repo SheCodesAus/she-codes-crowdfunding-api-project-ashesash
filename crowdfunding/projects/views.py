@@ -6,6 +6,7 @@ from .serializers import ProjectSerializer, ProjectDetailSerializer, PledgeSeria
 from django.http import Http404
 from rest_framework import status, generics, permissions
 from .permissions import IsOwnerOrReadOnly
+from django.shortcuts import get_object_or_404
 
 
 class ProjectList(APIView):

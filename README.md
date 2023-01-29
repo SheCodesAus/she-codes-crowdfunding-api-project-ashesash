@@ -11,6 +11,8 @@
 - [Fly.io](https://fly.io/docs/)
 - [Insomnia] (https://docs.insomnia.rest/)
 
+## Deployed at:
+[Pawful](red-morning-8348.fly.dev)
 ## Installation and Run project:
 
 1- Download or Clone the project
@@ -89,6 +91,50 @@ python3 manage.py createsuperuser
 	python3 manage.py runserver
 ```
 
+### Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data).
+​
+1. Create User
+​
+```shell
+curl --request POST \
+  --url http://127.0.0.1:8000/users/ \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"username": "testuser",
+	"email": "not@myemail.com",
+	"password": "not-my-password"
+}'
+```
+​
+2. Sign in User
+​
+```shell
+curl --request POST \
+  --url http://127.0.0.1:8000/api-token-auth/ \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"username": "testuser",
+	"password": "not-my-password"
+}'
+```
+​
+3. Create Project
+​
+```shell
+curl --request POST \
+  --url http://127.0.0.1:8000/projects/ \
+  --header 'Authorization: Token 5b8c82ec35c8e8cb1fac24f8eb6d480a367f322a' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"title": "Donate a cat",
+	"description": "Please help, we need a cat for she codes plus, our class lacks meows.",
+	"goal": 1,
+	"image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Dollar_bill_and_small_change.jpg",
+	"is_open": true,
+	"date_created": "2023-01-28T05:53:46.113Z"
+}'
+```
+
 \*\* take the link (http://127.0.0.1:8000/) and put it on your browser
 </br></br>
 
@@ -147,3 +193,15 @@ python3 manage.py createsuperuser
  
 <ins>API Specifications</ins>
 
+| Endpoint URL | Action         | HTTP Method | Authorisation     |
+| ------------ | -------------- | ----------- | ----------------- |
+| /users/      | List all users | GET         | Must be logged in |
+| /users/      | Create user    | POST        | N/A               |
+| /users/<int>      | Get user info  | GET         | Must be logged in |
+| /users/      |Delete user info| Delete      | Must be logged in |
+| /users/      | Update existing instance|PUT | Must be logged in |
+| /project/    | Create project | POST        | Must be logged in |
+| /project/    | Create project | GET         | Must be logged in |
+| /pledges/      | Update existing instance|PUT | Must be logged in |
+| /project/    | Create project | POST        | Must be logged in |
+| /project/    | Create project | GET         | Must be logged in |

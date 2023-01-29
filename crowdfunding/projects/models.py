@@ -10,7 +10,7 @@ class Project(models.Model):
     goal=models.IntegerField()
     Project_type = (
         ('goods', 'GOODS'),
-        ('adoption', 'ADOPTIONS'),
+        ('adoption', 'ADOPTION'),
         ('shelter', 'SHELTER'),
         ('animal healthcare', 'ANIMAL HEALTHCARE'),
         ('events', 'EVENTS')
@@ -23,7 +23,7 @@ class Project(models.Model):
     image=models.URLField()
     is_open=models.BooleanField()
     is_active=models.BooleanField(default=True)
-    date_created=models.DateTimeField(datetime.now())
+    date_created=models.DateTimeField(default=datetime.now())
     date_end=models.DateTimeField(default=(datetime.now() + timedelta(days=60)))
     owner=models.ForeignKey(
         User,
