@@ -124,3 +124,14 @@ class PledgeDetail(APIView):
             pledge.delete()
             return Response("User Deleted")
         return Response ("project not authorised to be deleted")
+
+class Liked(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    def post(self, request, pk):
+        project = get_object_or_404(Project, pk=pk)
+        if project.liked_by.filter(username=request.user.username).exists():
+            project.liked_by.remove(request.user)
+        else:
+            project.liked_by.add(request.user)
+        serializer = ProjectSerializer(instance=project)
+        return Response(serializer.data)
