@@ -201,7 +201,10 @@ curl --request POST \
 | /users/      |Delete user info| Delete      | Must be logged in |
 | /users/      | Update existing instance|PUT | Must be logged in |
 | /project/    | Create project | POST        | Must be logged in |
-| /project/    | Create project | GET         | Must be logged in |
-| /pledges/      | Update existing instance|PUT | Must be logged in |
-| /project/    | Create project | POST        | Must be logged in |
-| /project/    | Create project | GET         | Must be logged in |
+| /project/    | Get project | GET         | Must be logged in |
+| /project/<int>    | Update project detail | PUT         | Must be logged in |
+| /project/<int>      |Delete project| Delete      | Must be logged in |
+| /pledges/    | Create pledge | POST        | Must be logged in |
+| /pledges/    | Get pledge | GET         | Must be logged in |
+| /pledges/<int>      | Update existing instance|PUT | Must be logged in |
+| /pledges/<int>      |Delete pledge| Delete      | Must be logged in |
