@@ -1,6 +1,6 @@
 # Pawful - Everybody deserves a friend
 
-<img src="pawful-logo.png" alt="Pawful wireframe" width="300" height="auto"> 
+<img src="images/pawful-logo.png" alt="Pawful wireframe" width="300" height="auto"> 
 
 ### Pawful will be a crowdfunding website for people who are differently able, old or from low income households. It's also open to animal shelters struggling to keep their centres alive and retirement homes looking to adopt lots of pets. A crowdfunding project can be starting pending that the pets can be homed comfortably. 
 ### In second phase we will partner with animal shelters to make it easier for organizations/people looking shorter term options (fostering or for small petting events) and offer easier crowdfunding for such events.
@@ -177,19 +177,19 @@ curl --request POST \
 
 <ins>Database Schema</ins>
 </br>
- <img src="pawfuldatabase.png" alt="Pawful database schema" width="700" height="auto"> 
+ <img src="images/pawfuldatabase.png" alt="Pawful database schema" width="700" height="auto"> 
  </br>
  </br>
 
 <ins>Wireframe</ins>
 </br>
- <img src="pawfulwireframe.png" alt="Pawful wireframe" width="700" height="auto"> 
+ <img src="images/pawfulwireframe.png" alt="Pawful wireframe" width="700" height="auto"> 
  </br>
  </br>
  
  <ins>Colour palette</ins>
  </br>
- <img src="pawfulcolours.png" alt="Pawful Colour Scheme" width="700" height="auto"> 
+ <img src="images/pawfulcolours.png" alt="Pawful Colour Scheme" width="700" height="auto"> 
  
 <ins>API Specifications</ins>
 
